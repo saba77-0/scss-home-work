@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Company</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/png;base64,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">
+</head>
+<body>
+
+<section class="main">
+
+     <nav class="navbar">
+
+        <div class="logo">
+
+           <a href="#"><span class="brand-name">NEWEL</span></a>
+
+           <a href="#"><span class="brand-sub">RESIDENTAL<br>REMODELING</span></a>
+
+        </div>
+
+        <ul class="links">
+
+           <li><a href="#" class="active">home</a></li>         
+
+           <li><a href="#">services</a></li>
+
+           <li><a href="#">projects</a></li>
+
+           <li><a href="#">contact</a></li>      
+
+        </ul>
+
+        <a href="#" class="call">Call Now</a>
+
+     </nav>
+
+     <div class="content">
+
+      <strong><h1> 
+
+           <span>Newel</span>
+
+           <span>Residential</span>
+
+           <span>Remodeling</span>
+
+        </h1>
+
+        <p>Recreating Dream Homes That Last</p>
+
+      </strong>
+
+     </div>
+
+     <div class="social-icons">
+
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+
+     </div>
+
+
+
+  </section>
+
+
+
+
+
+<section class="main2">
+
+  <img class="img" src="/11062b_d218b097b3694ab987b122847c9968b5~mv2.avif" alt="Remodeling">
+
+  
+
+  <div class="texter">
+
+    <h1>About Us</h1>
+
+    <h3>Newel Residential Remodeling</h3>
+
+    <p>This is a space to share more about your business, who's behind it, what it does and what this site has to offer. It’s an opportunity to tell the story behind the business or describe a special service or product it offers. You can use this section to share your company's history or highlight a particular feature that sets it apart from competitors.</p>
+
+  </div>
+
+
+
+  <div class="item0">
+
+    <h2>Our Benefits</h2>
+
+  </div>
+
+  
+
+  <div class="grider">
+
+    <div class="item1">Vast Experience</div>
+
+    <div class="item2">Professional Team</div>
+
+    <div class="item3">High Finish</div>
+
+    <div class="item4">Sustainable & Accountable</div>
+
+  </div>
+
+</section>
+
+
+
+
+
+  <section class="services-section">
+
+  
+
+  <div class="services-left">
+
+    <div class="services-header">
+
+      <h2>Our Services</h2>
+
+    </div>
+
+    
+
+    <div class="services-list">
+
+      <div class="service-item">Complete Remodeling</div>
+
+      <div class="service-item">Kitchen Remodeling</div>
+
+      <div class="service-item">Bathroom Remodeling</div>
+
+      <div class="service-item">Home Interior</div>
+
+      <div class="service-item">Flooring</div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="services-right">
+
+    <video class="service-video" src="/file.mp4" autoplay muted loop playsinline></video>
+
+  </div>
+
+
+
+  <div class="more-info">
+
+
+
+   <a href="#"><p>More Info</p></a>
+
+
+
+</div>
+
+
+
+
+
+</section>
+
+
+
+
+
+<section class="projects-section">
+
+<div class="projects-header">
+
+<h2>Recent Projects</h2>
+
+</div>
+
+
+
+<div class="projects-grid">
+
+
+
+<div class="project-item"><img src="/img1.png" alt="#"></div>
+
+
+
+<div class="project-item"><img src="/img2.png" alt="#"></div>
+
+
+
+<div class="project-item wide"><img src="/img3.png" alt="#"></div>
+
+
+
+<div class="project-item"><img src="/download.avif" alt="#"></div>
+
+
+
+<div class="project-item"><img src="/img4.png" alt="#"></div>
+
+</div>
+
+
+
+
+
+<div class="projects-footer">
+
+
+
+<a href="#" class="view-all-btn">View All</a>
+
+
+
+</div>
+
+</section>
+
+
+
+
+
+<section>
+
+
+
+<div class="projects-section1">
+
+
+
+<div class="projects-header1">
+
+<h2 class="main-textN1">Testimonials</h2>
+
+</div>
+
+
+
+<div class="projects-grid1">
+
+  
+
+  
+
+  <div class="text1"><p>"Use this space to share a testimonial quote about your business, its products or its services. Insert a quote from a real customer or client here to build trust and win over site visitors. "</p>
+
+ <h2 class="text-N1">The Mathews</h2>
+
+</div>
+
+
+
+<div class="text1"><p>
+
+"Use this space to share a testimonial quote about your business, its products or its services. Insert a quote from a real customer or client here to build trust and win over site visitors. "</p>
+
+<h2 class="text-N2">Lars & Mary Williams</h2>
+
+</div>
+
+
+
+<div class="text1"> <p>"Use this space to share a testimonial quote about your business, its products or its services. Insert a quote from a real customer or client here to build trust and win over site visitors. "</p>
+
+<h2 class="text-N1">Chris Parks</h2>
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+</section>
+
+
+
+
+
+<section>
+
+
+
+<div class="main-section-N1">
+
+
+
+<div class="main-header-N1">
+
+<h2 class="main-text-N1">Contact Us</h2>
+
+<p class="main-text-child">This is the space to share your business's contact<br>information. Let people know the best ways to get in touch<br>and encourage them to reach out.</p>
+
+</div>
+
+
+
+<form class="contact"><div>
+
+
+
+ <div class="First-Name">
+
+<label for="first-name">First Name *</label>
+
+<input type="text" id="first-name" required> 
+
+</div> 
+
+
+
+<div class="Last-Name">
+
+<label for="last-name">Last Name *</label>
+
+<input type="text" id="last-name" required>
+
+</div>
+
+
+
+<div class="Email">
+
+ <label for="email">Email *</label>
+
+ <input type="text" id="email" required>
+
+ </div>
+
+
+
+
+
+<div class="form-group">
+
+  <label for="user-phone">Phone</label>
+
+  <input type="tel" id="user-phone" placeholder="🌐  +995 ...">
+
+</div>
+
+<div>
+
+<label for="address">Address</label>
+
+<input type="text" id="Address">
+
+
+
+<button class="submit-btn">Submit</button>
+
+</div>
+
+
+
+</form>
+
+</div>
+
+</section>
+
+
+
+
+
+<footer class="site-footer">
+
+    <div class="footer-container">
+
+        <div class="footer-column logo-section">
+
+            <div class="logo-wrapper">
+
+                <span class="logo-main">NEWEL</span>
+
+                <span class="logo-sub">RESIDENTIAL<br>REMODELING</span>
+
+            </div>
+              <div class="s-icones"> 
+            <p class="social-text">Follow Us on Socials</p>
+
+            <a href="https://facebook.com" target="_blank"><i  class="fab fa-facebook-f"></i></a>
+
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+
+</div>
+
+        </div>
+
+
+
+        <div class="footer-column contact-section">
+
+            <h3>Contact Us</h3>
+
+            <p>500 Terry Francine Street<br>San Francisco, CA 94158</p>
+
+            <p><a href="mailto:info@mysite.com">info@mysite.com</a></p>
+
+            <p><a href="tel:123-456-7890">123-456-7890</a></p>
+
+        </div>
+
+
+
+        <div class="footer-column explore-section">
+
+            <h3>Explore</h3>
+
+            <ul>
+
+                <li><a href="#">Home</a></li>
+
+                <li><a href="#">Services</a></li>
+
+                <li><a href="#">Projects</a></li>
+
+                <li><a href="#">Contact</a></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom-wrapper">
+
+        <div class="footer-bottom">
+
+            <div class="bottom-links">
+
+                <a href="#">Accessibility Statement</a>
+
+                <a href="#">Privacy Policy</a>
+
+            </div>
+
+            <div class="copyright">
+
+                &copy; 2035 by NEWEL. Powered and secured by Wix
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+ 
+
+
+</body>
+</html>
